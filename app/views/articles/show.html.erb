@@ -1,9 +1,10 @@
 <h1>  <%= @article.title %></h1>
 <p> <%= @article.body %></p>
 
-<button> <%=link_to "Back to articles", articles_path  %></button>
+<%=link_to "Back to articles", articles_path  %>
+<%= link_to "Delete",  article_path(@article), 
+method: :delete,
+data: {confirm: "Really delete the article?"}
+%>
+<%= link_to "edit", edit_article_path(@article) %>
 
-<%# <% @article.each do |art| %>
-  
-<%# 
-<% end %> 
